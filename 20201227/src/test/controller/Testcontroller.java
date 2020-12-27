@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import common.Action;
 import common.ActionForward;
+import test.action.LoginAction;
 import test.action.MainAction;
 
 @WebServlet("*.do")
@@ -29,13 +30,20 @@ public class Testcontroller extends HttpServlet {
 	
 	protected void doprocess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String requestURI = request.getRequestURI();
-		String contextPath = request.getContextPath();
-		String command = requestURI.substring(contextPath.length());
+		String requestURI = request.getRequestURI();// localhost뒤에 프로젝트 이름부터 끝까지 가져옴
+		String contextPath = request.getContextPath();//프로젝트 Path만 가져온다
+		String command = requestURI.substring(contextPath.length());// /이것만 남음
 		
 		ActionForward forward = null;
 		if(command.equals("/")) {
 			Action action = new MainAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/login.do")) {
+			Action action = new LoginAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {

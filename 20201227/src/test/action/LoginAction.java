@@ -6,14 +6,14 @@ import javax.servlet.http.HttpServletResponse;
 import common.Action;
 import common.ActionForward;
 
-public class MainAction implements Action{
+public class LoginAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 
 		ActionForward forward = new ActionForward();
-		forward.setPath("/views/index.jsp");
+		forward.setPath("/views/loginForm.jsp");
 		return forward;
 	}
 
