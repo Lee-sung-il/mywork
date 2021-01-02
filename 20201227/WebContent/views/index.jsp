@@ -32,6 +32,8 @@
 <%}else{ %>
 <a href="logout.do">로그아웃</a> <%} %>
 <a href="forwardTest.do">포워드 테스트</a>
+
+<a href="javaBeanTest.do">자바빈</a>
 <%-- 
 <div>
 <h1>헤더정보</h1>

@@ -1,7 +1,7 @@
 package test.vo;
 
 public class TestVo {
-	private String name;
+	private String name ="mwjung";
 
 	public String getName() {
 		return name;

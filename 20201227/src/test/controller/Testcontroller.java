@@ -14,6 +14,7 @@ import common.ActionForward;
 import test.action.LoginAction;
 import test.action.MainAction;
 import test.action.forwardTestAction;
+import test.action.javaBeanTestAction;
 import test.action.loginprocAction;
 import test.action.logoutAction;
 
@@ -68,6 +69,13 @@ public class Testcontroller extends HttpServlet {
 			}
 		}else if(command.equals("/forwardTest.do")) {
 			Action action = new forwardTestAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/javaBeanTest.do")) {
+			Action action = new javaBeanTestAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
