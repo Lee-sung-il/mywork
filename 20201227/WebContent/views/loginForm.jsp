@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<header>
+<%@include file="header.jsp" %>
+</header>
 <form action="loginproc.do" method="post">
 
 <input type="text" name="id" placeholder="아이디">
@@ -16,5 +19,8 @@
 <input type="submit" value="로그인">
 
 </form>
+<footer>
+<%@include file="footer.jsp" %>
+</footer>
 </body>
 </html>

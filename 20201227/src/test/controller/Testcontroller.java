@@ -13,6 +13,9 @@ import common.Action;
 import common.ActionForward;
 import test.action.LoginAction;
 import test.action.MainAction;
+import test.action.forwardTestAction;
+import test.action.loginprocAction;
+import test.action.logoutAction;
 
 @WebServlet("*.do")
 public class Testcontroller extends HttpServlet {
@@ -44,6 +47,27 @@ public class Testcontroller extends HttpServlet {
 			}
 		}else if(command.equals("/login.do")) {
 			Action action = new LoginAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/loginproc.do")) {
+			Action action = new loginprocAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/logout.do")) {
+			Action action = new logoutAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/forwardTest.do")) {
+			Action action = new forwardTestAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
