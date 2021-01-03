@@ -13,6 +13,8 @@ import common.Action;
 import common.ActionForward;
 import test.action.LoginAction;
 import test.action.MainAction;
+import test.action.NameAction;
+import test.action.FormNameAction;
 import test.action.ForwardTestAction;
 import test.action.InsertNameAction;
 import test.action.JavaBeanTestAction;
@@ -84,6 +86,20 @@ public class Testcontroller extends HttpServlet {
 			}
 		}else if(command.equals("/insertName.do")) {
 			Action action = new InsertNameAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/formName.do")) {
+			Action action = new FormNameAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/name.do")) {
+			Action action = new NameAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {

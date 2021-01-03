@@ -39,5 +39,18 @@ public class TestDao {
 		}
 		return count;
 	}
-	
+	public int insertName(String name) {
+		PreparedStatement pstmt = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement("insert into test(name) values(?)");
+			pstmt.setString(1, name);
+			count=pstmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return count;
+	}
 }

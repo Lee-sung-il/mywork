@@ -35,6 +35,7 @@
 
 <a href="javaBeanTest.do">자바빈</a>
 <a href="insertName.do">이름추가</a>
+<a href="formName.do">폼이름 추가</a>
 <%-- 
 <div>
 <h1>헤더정보</h1>

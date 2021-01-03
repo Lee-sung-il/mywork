@@ -22,4 +22,19 @@ public class TestService {
 		}close(con);
 		return isSuccess;
 	}
+	
+	public boolean insertName(String name) {
+		TestDao dao = TestDao.getInstance();
+		Connection con = getConnection();
+		dao.setConnection(con);
+		boolean isSuccess = false;
+		int count = dao.insertName(name);
+		if(count > 0 ) {
+			commit(con);
+			isSuccess = true;
+		}else {
+			rollback(con);
+		}close(con);
+		return isSuccess;
+	}
 }
