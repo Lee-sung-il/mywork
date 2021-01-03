@@ -1,31 +1,13 @@
-package test.vo;
+package test.service;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 
 import test.dao.TestDao;
+import test.vo.TestVo;
 
 import static common.jdbcUtil.*;
-public class TestVo {
-	private int sq;
-	private String name;
-	public int getSq() {
-		return sq;
-	}
 
-	public void setSq(int sq) {
-		this.sq = sq;
-	}
-
-	
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+public class TestService {
 	public boolean insertName(TestVo vo) {
 		TestDao dao = TestDao.getInstance();
 		Connection con = getConnection();
@@ -40,5 +22,4 @@ public class TestVo {
 		}close(con);
 		return isSuccess;
 	}
-
 }

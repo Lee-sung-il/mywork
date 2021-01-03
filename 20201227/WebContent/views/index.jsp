@@ -34,6 +34,7 @@
 <a href="forwardTest.do">포워드 테스트</a>
 
 <a href="javaBeanTest.do">자바빈</a>
+<a href="insertName.do">이름추가</a>
 <%-- 
 <div>
 <h1>헤더정보</h1>

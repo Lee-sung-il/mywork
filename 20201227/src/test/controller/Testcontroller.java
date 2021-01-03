@@ -13,10 +13,11 @@ import common.Action;
 import common.ActionForward;
 import test.action.LoginAction;
 import test.action.MainAction;
-import test.action.forwardTestAction;
-import test.action.javaBeanTestAction;
-import test.action.loginprocAction;
-import test.action.logoutAction;
+import test.action.ForwardTestAction;
+import test.action.InsertNameAction;
+import test.action.JavaBeanTestAction;
+import test.action.LoginprocAction;
+import test.action.LogoutAction;
 
 @WebServlet("*.do")
 public class Testcontroller extends HttpServlet {
@@ -54,28 +55,35 @@ public class Testcontroller extends HttpServlet {
 				e.printStackTrace();
 			}
 		}else if(command.equals("/loginproc.do")) {
-			Action action = new loginprocAction();
+			Action action = new LoginprocAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}else if(command.equals("/logout.do")) {
-			Action action = new logoutAction();
+			Action action = new LogoutAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}else if(command.equals("/forwardTest.do")) {
-			Action action = new forwardTestAction();
+			Action action = new ForwardTestAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}else if(command.equals("/javaBeanTest.do")) {
-			Action action = new javaBeanTestAction();
+			Action action = new JavaBeanTestAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/insertName.do")) {
+			Action action = new InsertNameAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {

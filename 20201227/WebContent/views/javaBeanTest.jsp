@@ -14,6 +14,6 @@
 <body>
 자바빈 테스트 :<%=vo.getName() %>
 
-자바빈 테스트1 : <jsp:getProperty name="vo" property="name"  />
+자바빈 테스트1 : <jsp:getProperty name="vo" property="name"/>
 </body>
 </html>
